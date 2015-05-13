@@ -23,7 +23,7 @@ $("document").ready(function(){
     $.ajax({
       type: "POST",
       dataType: "json",
-      url: "http://websys3.stern.nyu.edu/~rm3827/websys/ajax/login.php", //Relative or absolute path to response.php file
+      url: "http://websys3.stern.nyu.edu/websysS15GB/websysS15GB2/public_html/websys/login_lck.php", //Relative or absolute path to response.php file
       data: data,
       success: function(data) {
         bigflag = 0;
@@ -42,7 +42,7 @@ $("document").ready(function(){
           setCookie("Email",data.Email);
           setCookie("u_id",data.u_id);
           $("#result").html("login sucuss in javascript");
-           window.location.assign("home.html");
+           window.location.href("home.html");
           
         }
         // $(".js-ajax-php-json").hide();
@@ -58,7 +58,7 @@ $("document").ready(function(){
 <body>
 <div class="login-card">
 <!--Put the following in the <body>-->
-<form action = "http://websys3.stern.nyu.edu/~rm3827/websys/ajax/login.php" class="js-ajax-php-json" method="post" accept-charset="utf-8">
+<form action = "http://websys3.stern.nyu.edu/websysS15GB/websysS15GB2/public_html/websys/login_lck.php" class="js-ajax-php-json" method="post" accept-charset="utf-8">
   <input type="text" name="u_name" value="" placeholder="your username" />
   <input type="text" name="password" value="" placeholder="password" />
   <input  class ="login-submit" type="submit" name="submit" value="login"  />
