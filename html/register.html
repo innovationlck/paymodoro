@@ -181,13 +181,13 @@ $("document").ready(function(){
     $.ajax({
       type: "POST",
       dataType: "json",
-      url: "http://websys3.stern.nyu.edu/~rm3827/websys/ajax/register.php", //Relative or absolute path to response.php file
+      url: "http://websys3.stern.nyu.edu/websysS15GB/websysS15GB2/public_html/websys/paymodoro_master/php/register.php", //Relative or absolute path to response.php file
       data: data,
       success: function(data) {
         
         $(".the-return").html(
           // "Favorite beverage: " + data["u_name"] + "<br />Favorite restaurant: " + data["password"] + "<br />Gender: "  + data["json"]
-          "good"+data["message"]+data.flag
+          data["message"]
                   );
         
         if(data.flag == "0")
@@ -214,18 +214,16 @@ $("document").ready(function(){
 <body>
 
 <!--Put the following in the <body>-->
-<form  id = "signup" action = "http://websys3.stern.nyu.edu/~rm3827/websys/ajax/register.php" class="js-ajax-php-json" method="post" accept-charset="utf-8">
-  <input type="text" name="u_name" value="" placeholder="Favorite restaurant" />
-  <input type="text" name="password" value="" placeholder="Favorite beverage" />
-  <input type = "email" name = "Email" value = "" placeholder= "please type your email">
+<form  id = "signup" action = "http://websys3.stern.nyu.edu/websysS15GB/websysS15GB2/public_html/websys/paymodoro_master/php/register.php" class="js-ajax-php-json" method="post" accept-charset="utf-8">
+  <input type="text" name="u_name" value="" placeholder="Username" />
+  <input type="text" name="password" value="" placeholder="Password" />
+  <input type = "email" name = "Email" value = "" placeholder= "Email Address">
   <input type="submit" name="submit" value="Submit form" />
 </form>
 
 <div class="the-return" align="center">
-  [HTML is replaced when successful.]
 </div>
 <div id = "result" align="center">
-result is placed here
 </div>
 
 </body>
