@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-
 <html>
 <head>
-<script type="text/javascript" src="phonegap.js"></script>
-<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type = "text/javascript" src="countdown3.js"></script>
-<body onload="onLoad()";>
+
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+  <link rel="stylesheet" type="text/css" href="../css/timer_style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="../js/brain.js"></script>
+  
+  <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src= "../js/countdown3.js"></script>
+
+  <title>Paymodoro Cycle Timer</title>
+
+</head>
+
+<body onLoad="onLoad()";>
 <select id="hour" placeholder="hour">
   <option value="0">0</option>
   <option value="1">1</option>
@@ -15,29 +26,56 @@
   <option value="00">00</option>
   <option value="30">30</option>
   <option value="60">60</option>
-</select> <select id="secs" placeholder="second">
-  <option value="00">00</option>
 </select>
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="R98J5UDCW5NLC">
-<table>
-<tr><td><input type="hidden" name="on0" value="Wager Amount">Wager Amount</td></tr><tr><td><select name="os0">
-	<option value="Small Tomatoes">Small Tomatoes $1.00 USD</option>
-	<option value="Medium Tomatoes">Medium Tomatoes $2.00 USD</option>
-	<option value="Big Tomatoes">Big Tomatoes $4.00 USD</option>
-</select> </td></tr>
-</table>
-<input type="hidden" name="currency_code" value="USD">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-
 
 
 <input type="text" id="timer" >
-<button id="btn" disabled="true" onClick="start()">Start</button>
+<button id="btn" onClick="start()">Start</button>
+
+<div class="dummy"></div>
+
+  <div class="container"> <!-- container -->
+
+    <img src="img/pomodoro.png">
+
+    <div class="hero-unit">  <!-- hero-unit -->
+
+      <hgroup>
+        <h1 id="m">25</h1><h2>m </h2>
+        <h1 id="s">00</h1><h2>s </h2>
+        <h1 id="ms">000</h1><h2>ms</h2>
+      </hgroup>  
+        
+      <p>
+        <a id="pomodoro25" class="btn  large">Pomo 25 minutes</a>
+        <a id="stop" class="btn  large" >Give up</a>
+      </p>
+
+      <div id="info" class="alert-message"><b>Heads</b> up! Your timer stopped!</div>
+
+      <div id="log" class="alert-message"><h3>Log:</h3>
+        <ul>
+
+        </ul>
+      </div>
+
+    </div><!-- hero-unit -->
+
+    
+      <div class="span-one-third"><h3>How can I start?</h3>
+      <ol>
+        <li>Choose a task to be accomplished</li>
+        <li>Work on the task until the Pomodoro rings</li>
+        <li>Take a short break (5 minutes)</li>
+      </ol>
+      
+      Created by Web Dev Team 2
+      </div>
+    </div>
+
+    <footer>
+    </footer>
+  </div> <!-- container -->
+  
 </body>
-</head>
 </html>

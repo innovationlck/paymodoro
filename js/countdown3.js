@@ -9,20 +9,29 @@ function onLoad() {
     function onDeviceReady() {
         // Register the event listener
         document.addEventListener("backbutton", onBackKeyDown, true);
+        document.addEventListener("pause", onPause, true);
     }
 
     // Handle the back button
-    //
     function onBackKeyDown() {
-alert("GO BACK!");
-navigator.app.exitApp();
+    if(confirm("Do you really want to do this?"))
+{	
+	navigator.app.exitApp();
+}   
+}
+
+    function onPause(){
+    onResume();
+    alert("Sorry I won't go in background");
     }
 
+function onResume(){
+}
 
 jQuery(window).bind(
     "beforeunload", 
     function() { 
-       return confirm("You will be charged if you leave")
+       return confirm("You will be charged if you leave");
     }
 )
 
@@ -39,7 +48,7 @@ start = function(){
 
 Countdown = function()
 {
-  this.start_time = "30:00";
+  //this.start_time = "30:00";
   this.target_id = "#timer";
   this.name = "timer";
 }
@@ -59,7 +68,7 @@ Countdown.prototype.reset = function()
   //this.seconds = parseInt(time[1]);
     this.hour = hour.value;
     this.minutes = minute.value;
-    this.seconds = secs.value;
+    this.seconds = 0;
   this.update_target();
 
 }
@@ -83,13 +92,19 @@ else
 this.seconds = this.seconds-1;
 }
 }
+else
+{
+alert("Congratulations!, You Won!!.. Please Check your email");
+}
 this.update_target();
 }
 
 Countdown.prototype.update_target = function(){
 
 seconds = this.seconds;
+minutes = this.minutes;
 if(seconds < 10) seconds = "0" + seconds;
+if(minutes < 10) minutes = "0" + minutes;
 $(this.target_id).val(this.hour + ":" + this.minutes + ":" + seconds)
 
 }
