@@ -20,6 +20,9 @@
     body { 
       background: #eee; 
     }
+	#mypro_plain{
+		      margin: 5px 0;
+	}
     #mypro{
       margin: 5px 0;
       padding: 15px;
@@ -203,7 +206,7 @@
     }   
   </style>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="cookie.js"></script>
+<script src="../js/cookie.js"></script>
 <script type = "text/javascript" src="countdown3.js"></script>
 <script type="text/javascript">
 $("document").ready(
@@ -218,7 +221,7 @@ $("document").ready(
 
 function logout()
 {
-	deleteCookie("u_name");
+  deleteCookie("u_name");
   deleteCookie("Email");
 	document.write("you are logout in 3 seconds");
 	window.setTimeout(function () {
@@ -246,16 +249,39 @@ function myprofile()
 </script>
 
 
+
+
+<!-- start of bootstrap styling -->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+      	<link href="app_styles.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<!-- end of bootstrap styling -->
+
+
 </head>
 
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4">
+        </div>
+        <div class="col-xs-4">
+            <img src="../png_images/paymodoro_logo.png" class="img-responsive">
+        </div>
+        <div class="col-xs-4">
+        </div>
+    </div>
+</div>
 
 
 
 
-
-<br>
-
-<button id ="mypro" onclick="myprofile()">my profile</button>
+<button id ="mypro_plain" onclick="myprofile()">my profile</button>
 <body onload="onLoad()";>
 <select id="hour" placeholder="hour">
   <option value="0">0</option>
@@ -295,8 +321,11 @@ function myprofile()
 
 <input type="text" id="timer" >
 <button id="btn" disabled="true" onClick="start()">Start</button>
+
+<button id ="logout" onclick = "logout()">Logout</button>
 </body>
-<button id = "logout" onclick = "logout()">logout</button>
+
+
 <br>
 <!-- Place this tag where you want the +1 button to render. -->
 <div class="g-plusone" data-annotation="inline" data-width="600"></div>
@@ -312,6 +341,9 @@ function myprofile()
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <div class="fb-share-button" align="center" data-href="home.html" data-layout="button"></div>
+
+
+
 </html>
 
 
