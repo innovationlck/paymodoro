@@ -223,7 +223,7 @@ function logout()
 {
   deleteCookie("u_name");
   deleteCookie("Email");
-	document.write("you are logout in 3 seconds");
+	document.write("You are being logged out in 3 seconds...");
 	window.setTimeout(function () {
         location.href = "index.html";}, 3000);
 }
@@ -236,7 +236,7 @@ function goal_start()
 function myprofile()
 {
   
-  document.write("you are going in 3 seconds");
+  document.write("You are going in 3 seconds... please wait...");
   window.setTimeout(function () {
         location.href = "myprofile.html";}, 3000);
 }
@@ -279,23 +279,17 @@ function myprofile()
 </div>
 
 
+<div class="container">
+<h1>Let's get ready!</h1>
+<p>Paymodoro is all about the buy-in.  Pick your Challenge Payment amount and check out through PayPal.  Then you'll be able to start your timer!</p>
+<p><i>In this beta version, you can check out with fake money. Your PayPal username is: payer1@paymodoro.com and your password is: buytomato</i></p>
+</div>
 
 
-<button id ="mypro_plain" onclick="myprofile()">my profile</button>
-<body onload="onLoad()";>
-<select id="hour" placeholder="hour">
-  <option value="0">0</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option> :
-</select> <select id="minute" placeholder="minute">
-  <option value="00">00</option>
-  <option value="30">30</option>
-  <option value="60">60</option>
-</select> <select id="secs" placeholder="second">
-  <option value="00">00</option>
-</select>
 
+<!-- start of the paypal button-->
+<div class="container">
+<h1>Let's get set!</h1>
 <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="UFLBZPM3PUQYW">
@@ -310,20 +304,62 @@ function myprofile()
 <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
+</div>
+<!-- end of the paypal button-->
 
 
 
+<!-- Start edit Profile and logout buttons-->
+<div class="container">
+<br>
+<h1>User Tools</h1>
+<button id ="mypro_plain" onclick="myprofile()">Edit my profile</button>
+<button id ="logout" onclick = "logout()">Logout</button>
+</div>
+<!-- end edit Profile and logout buttons-->
+
+
+<!-- start tomato logo-->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4">
+        </div>
+        <div class="col-xs-4">
+            <img src="../png_images/tomato.png" class="img-responsive">
+        </div>
+        <div class="col-xs-4">
+        </div>
+    </div>
+</div>
+<!-- end tomato logo-->
 
 
 
+<!-- start time selector-->
+<body onload="onLoad()";>
+<select id="hour" placeholder="hour">
+  <option value="0">0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option> :
+</select> <select id="minute" placeholder="minute">
+  <option value="00">00</option>
+  <option value="30">30</option>
+  <option value="60">60</option>
+</select> <select id="secs" placeholder="second">
+  <option value="00">00</option>
+</select>
+<!-- end time selector-->
 
-
-
+<!-- start timebox and startbutton-->
 <input type="text" id="timer" >
 <button id="btn" disabled="true" onClick="start()">Start</button>
+<!-- end timebox and startbutton-->
 
-<button id ="logout" onclick = "logout()">Logout</button>
-</body>
+
+
+
+
 
 
 <br>
@@ -343,7 +379,7 @@ function myprofile()
 <div class="fb-share-button" align="center" data-href="home.html" data-layout="button"></div>
 
 
-
+</body>
 </html>
 
 
