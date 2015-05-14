@@ -47,8 +47,38 @@ $("document").ready(function(){
 });
 </script>
 
+
+
+<!-- start of bootstrap styling -->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+      	<link href="app_styles.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<!-- end of bootstrap styling -->
+
+
 </head>
+
+
+
+
+
+
+
 <body>
+
+<div class="container">
+<div class="jumbotron"> 
+	<img src="../png_images/paymodoro_logo.png" class="img-responsive">
+</div>
+</div>
+
+
+<div class="container">
+<p>Login here to begin!</p>
 <div class="login-card">
 <!--Put the following in the <body>-->
 <form action = "http://websys3.stern.nyu.edu/websysS15GB/websysS15GB2/public_html/websys/paymodoro_master/php/login.php" class="js-ajax-php-json" method="post" accept-charset="utf-8">
@@ -56,17 +86,46 @@ $("document").ready(function(){
   <input type="text" name="password" value="" placeholder="password" />
   <input  class ="login-submit" type="submit" name="submit" value="login"  />
 </form>
+</div>
+</div>
+
+<div class="container">
 <div class="login-help">
-Not yet a Paymodoro user?<a href = "register.html"> Register Here!</a>
+<p><br>Not yet a Paymodoro user?  
+<a href = "register.html">Register Here!</a></p>
+</div>
 </div>
 
-</div>
-
-
+<h1>
 <div class="the-return" align= "center">
 </div>
+</h1>
+
 <div id = "result" align="center">
 </div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4">
+        </div>
+        <div class="col-xs-4">
+            <img src="../png_images/tomato.png" class="img-responsive">
+        </div>
+        <div class="col-xs-4">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
 
 </body>
 </html>
