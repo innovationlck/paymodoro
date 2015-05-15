@@ -63,8 +63,19 @@ body {
 </style>
 
 
+<!--start bootstrap recc-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="bootstrap.css" rel="stylesheet" media="screen">
+        <link href="bootstrap-responsive.css" rel="stylesheet" media="screen">
+<!--end bootstrap recc-->
+
 
 </head>
+
+
+
+
 
 <body onLoad="onLoad()";>
 
@@ -94,13 +105,12 @@ body {
 
 <div class="container">
 <h1>Set your timer</h1>
-<p>Choose your focus time, from 1 half hour to 3 hours, in half hour intervals. Each half hour cycle starts with 25 minutes of "focus" time and ends with 5 minutes of "break" time.   If you don't touch your phone during the focus periods, you win!   You'll get your buy-in back plus a reward!</p>
-<p>Once you win (or if you have to give up), click on the logout at the bottom.  But for now, let's get started!</p>
-<p><i>In this beta version, you can choose to demo a work/break transition or a winning situation.  Leave the hour set to "0" and choose "win demo" or "break demo" from the minutes dropdown.  Wait for one minute to watch the change.</i></p>
+<p>Choose your focus time, from 1 half hour to 3 hours. Each half hour cycle starts with 25 minutes of focus and ends with a 5 minute break.  If you don't touch your phone during the focus periods, you win! Once you win (or give up), logout below.</p>
+<p><i>In this beta version, you can demo a work/break transition or a winning situation.  Leave the hour set to "0" and choose "win demo" or "break demo" from the minutes dropdown.  Wait for one minute to watch the change.</i></p>
 
 
 <h4>
-Hour<select id="hour" placeholder="hour">
+Hours<select id="hour" placeholder="hour">
   <option value="0">0</option>
   <option value="1">1</option>
   <option value="2">2</option>
@@ -112,7 +122,7 @@ Minutes<select id="minute" placeholder="minute">
   <option value="06">break demo</option>
   <option value="30">30</option>
   <option value="60">60</option>
-</select>
+</select> <br>
 
 
 Countdown Clock:<input type="text" id="timer" >
