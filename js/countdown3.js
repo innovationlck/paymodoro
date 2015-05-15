@@ -1,5 +1,8 @@
 
-
+var globaltime = 0,
+	a = 0,
+	b = 0;
+	
 function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, true);
     }
@@ -41,7 +44,7 @@ start = function(){
   timer = new Countdown();
   timer.init();
   
-  
+
 
 }
 
@@ -69,45 +72,62 @@ Countdown.prototype.reset = function()
     this.hour = hour.value;
     this.minutes = minute.value;
     this.seconds = 0;
+	
+	
+	a = parseInt(hour.value);
+	b = parseInt(minute.value);
+	
+	globaltime = a*60+b;
+	
   this.update_target();
 
 }
 
 Countdown.prototype.tick = function(){
  if(this.hour >0 || this.seconds > 0 || this.minutes >0)
-{
-if(this.minutes==0&&this.seconds==0)
-{
-this.hour = this.hour - 1;
-this.minutes = 59;
-this.seconds = 59;
-}
-else if(this.seconds == 0)
-{
-this.minutes = this.minutes -1 ;
-this.seconds = 59;
-}
-else
-{
-this.seconds = this.seconds-1;
-}
-}
-else
-{
-alert("Congratulations!, You Won!!.. Please Check your email");
-}
+ {
+	if(this.minutes==0&&this.seconds==0)
+	{
+	this.hour = this.hour - 1;
+	this.minutes = 59;
+	this.seconds = 59;
+	}
+	else if(this.seconds == 0)
+	{
+	this.minutes = this.minutes -1 ;
+	this.seconds = 59;
+	}
+	else
+	{
+	this.seconds = this.seconds-1;
+	}
+  // write whether it's a focus time or a break time
+  		if(this.minutes < 5) {
+  		document.getElementById("messages").innerHTML="Whew... take a break.  Great job!";
+  		}
+  		else if(this.minutes <35 && this.minutes > 34) {
+  		document.getElementById("messages").innerHTML="Whew... take a break.  Great job!";
+  		}
+  		else {
+  		document.getElementById("messages").innerHTML="Time to focus.  You can do it!";
+  		}
+
+  }
+  else
+  {
+  document.getElementById("messages").innerHTML="Congratulations!  You win!  Check your email for a PayPal reward.";
+  }
 this.update_target();
 }
 
 Countdown.prototype.update_target = function(){
-
-seconds = this.seconds;
-minutes = this.minutes;
-if(seconds < 10) seconds = "0" + seconds;
-if(minutes < 10) minutes = "0" + minutes;
-$(this.target_id).val(this.hour + ":" + this.minutes + ":" + seconds)
-
+	seconds = this.seconds;
+	minutes = this.minutes;
+	if(seconds < 10) seconds = "0" + seconds;
+	if(minutes < 10) minutes = "0" + minutes;
+	$(this.target_id).val(this.hour + ":" + this.minutes + ":" + seconds)
 }
+
 
 
 
