@@ -14,10 +14,36 @@
   <title>Paymodoro Cycle Timer</title>
 
 
+<!--start logout function-->
+<script src="../js/cookie.js"></script>
+<script type="text/javascript">
+function logout()
+{
+  deleteCookie("u_name");
+  deleteCookie("Email");
+	document.write("You are being logged out in 3 seconds...");
+	window.setTimeout(function () {
+        location.href = "index.html";}, 3000);
+}
+
+</script>
+<!--end logout function-->
 
 
-
-
+<style>
+  button{
+      margin: 5px 0;
+      padding: 15px;
+      width: 100%;
+      *width: 518px;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px; 
+    }
+</style>
 
 
 
@@ -43,13 +69,11 @@ Minutes<select id="minute" placeholder="minute">
 <input type="text" id="timer" >
 <button id="btn" onClick="start()">Start</button>
 
-<button id="btn" onClick="setPomodoro(25)">Start</button>
-
 <!-- start messages-->
 <div id="messages">Paymodoro time!</div>
 <!-- end messages-->
 
-
+<button id ="logout" onclick = "logout()">Logout</button>
   
 </body>
 </html>
