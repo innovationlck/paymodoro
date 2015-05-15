@@ -192,7 +192,7 @@ $("document").ready(function(){
         
         if(data.flag == "0")
         {
-        	$("#result").html(" you fail to register please ");
+        	$("#result").html("Your registration failed.  Please try again.");
         	
         }
         else if (data.flag == "1")
@@ -210,9 +210,42 @@ $("document").ready(function(){
   });
 });
 </script>
+
+
+<!-- start of bootstrap styling -->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+      	<link href="app_styles.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<!-- end of bootstrap styling -->
+
+
+
 </head>
+
+
+
+
+
 <body>
 
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4">
+        </div>
+        <div class="col-xs-4">
+            <img src="../png_images/paymodoro_logo.png" class="img-responsive">
+        </div>
+        <div class="col-xs-4">
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
 <!--Put the following in the <body>-->
 <form  id = "signup" action = "http://websys3.stern.nyu.edu/websysS15GB/websysS15GB2/public_html/websys/paymodoro_master/php/register.php" class="js-ajax-php-json" method="post" accept-charset="utf-8">
   <input type="text" name="u_name" value="" placeholder="Username" />
@@ -220,11 +253,30 @@ $("document").ready(function(){
   <input type = "email" name = "Email" value = "" placeholder= "Email Address">
   <input type="submit" name="submit" value="Submit form" />
 </form>
+</div>
 
-<div class="the-return" align="center">
+<h1>
+	<div class="the-return" align="center">
+	</div>
+	<div id = "result" align="center">
+	</div>
+</h1>
+
+<!-- start tomato logo-->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4">
+        </div>
+        <div class="col-xs-4">
+            <img src="../png_images/tomato.png" class="img-responsive">
+        </div>
+        <div class="col-xs-4">
+        </div>
+    </div>
 </div>
-<div id = "result" align="center">
-</div>
+<!-- end tomato logo-->
+
+
 
 </body>
 </html>
